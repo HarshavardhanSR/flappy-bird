@@ -1,76 +1,109 @@
-# Flappy-bird
-Flappy Bird game project built using vanilla HTML, CSS, and JavaScript 
-# About the Game
-A simple side-scrolling game where the player controls a bird to fly between pipes without hitting them. Flying between each set of pipes scores 1 point and hitting them or the ground ends the game. See how long you can last and set records.
+# FLAPPY BIRD
+Flappy bird flew into an endless pipe zone (or is it?) and needs help flying through to get out.  
 
-## 🔧 How to Run  
-1. Clone this repository:  
-   ```sh
-   git clone https://github.com/HarshavardhanSR/flappy-bird.git
-2. Open index.html in a browser.
-3. Start playing! 🚀
+# ABOUT THE GAME
+A simple side-scrolling game where the player controls a bird to fly between pipes without hitting them.  Flying between each set of pipes scores 1 point and hitting them or the ground ends the game.  See how long you can last and set records.  
+
+Here's a link to the game:
+https://noanonoa.github.io/flappy-bird/
+
+# WIREFRAME  
+![wireframe for game screen](/img/001-wireframe.png "Game Screen")  
+![wireframe for collision mechanics](/img/002-wireframe.png "Collision Mechanics")
+
+# TECHNOLOGY
+ * HTML/CSS on canvas
+ * JavaScript for game logic
+
+# ASSETS
+### IMAGES
+![flappy bird theme](/img/og-theme.png)  
+(src: google images)  
+![flappy bird theme v2](/img/og-theme-2.png)  
+(src: https://www.spriters-resource.com/fullview/59894/)  
+### AUDIO
+(src: https://www.sounds-resource.com/mobile/flappybird/sound/5309/)
+### SCREENSHOT
+![flappy bird screenshot](/img/001-screenshot.png)
 
 # MVP
-1) start the game with a 'press button'
-2) bird falls default to gravity
-3) bird flies to 'click' (might be better for mobile capabilities)
-4) pipes spawn top and bottom and scroll to the left
-5) track score
-6) end game on collision
-# STRETCH GOALS
-1. animate bird
-2. add sounds for scoring, flying, and collision
-3. a customized theme
-4. game is animated while waiting for player to start game
-5. night time / day time
-6. add a running time to display
-7. make the game web responsive
-# GAMEPLAN
-# HTML
-1. container for gaming screen
-2. game title
-3. game screen <canvas>
-# CSS
-1. centered game title
-2. centered game screen
-# Pieces You Need
-1. Canvas Setup – Specify canvas size.
-2. Bird Image – Draw bird sprite.
-3. Top Pipe Image – Load and draw the top pipe.
-4. Pipe Gap – Maintain a constant gap between pipes.
-5. Bottom Pipe Image – Load and draw the bottom pipe.
-6. Score Tracker – Track and display the score.
-7. Ready Screen – Display when the game state is 0 (before starting).
-8. Game Over Screen – Display when the game state is 2.
-9. Background Image – Load and draw the background.
-10. Ground Image – Load and draw the ground.
-11. Sounds – Add sound effects for:
-        1. Flying
-        2. Collision
-        3. Scoring
-        4. Falling
-        5. Game Over
+ * start the game with a 'press button'
+ * bird falls default to gravity
+ * bird flies to 'click' (might be better for mobile capabilities)
+ * pipes spawn top and bottom and scroll to the left 
+ * track score
+ * end game on collision
 
-# Functions You Need Start Game (startGame()) – Change game state to 1.
-1. Start on Click (handleClick()) – Trigger game start on mobile tap or spacebar.
-2. Spawn Pipes (spawnPipes()) – Generate pipes with a constant gap.
-3. Pipe Movement (movePipes()) – Shift pipes left across the screen.
-4. Pipe Collision Check (checkPipeCollision()) – Detect if the bird hits pipes.
-5. Bird Movement (updateBird()) – Adjust bird’s position with gravity.
-6. Gravity (applyGravity()) – Increase bird’s downward velocity over time.
-7. Flying (fly()) – Move bird upward when clicking or pressing space.
-8. Bird Rotation (rotateBird()) – Rotate the bird upward when flying.
-9. Bird Animation (animateBird()) – Flip through images for animation.
-10. Draw Game (drawGame()) – Render all elements continuously.
-11. Score Update (updateScore()) – Increment score when passing a pipe.
-12. Pipe Randomization (randomPipeY()) – Randomly generate pipe heights.
-13. Draw Background (drawBackground()) – Render the background image.
-14. Draw Bird (drawBird()) – Render the bird sprite.
-15. Game Over (gameOver()) – Trigger game over (state 2) on collision.
-16. Collision Check (checkCollision()) – Detect collision with pipes, floor, or ceiling.
-17. Cut Screen (cutScreen()) – Display game over overlay.
-18. Restart Game (restartGame()) – Reset game on click.
-19. Display Best Score (displayBestScore()) – Show the highest score.
-20. Display Current Score (displayScore()) – Show current score.
-21. Reset Score (resetScore()) – Set score back to 0 on restart.
-22. Reset Pipes (resetPipes()) – Clear pipes when restarting the game.
+# STRETCH GOALS
+ * animate bird
+ * add sounds for scoring, flying, and collision
+ * a customized theme
+ * game is animated while waiting for player to start game
+ * night time / day time
+ * add a running time to display
+ * make the game web responsive
+
+# GAMEPLAN
+---
+## HTML
+ - [X] container for gaming screen
+ - [X] game title
+ - [X] game screen `<canvas>`
+
+## CSS
+ - [X] *centered* game title
+ - [X] *centered* game screen
+
+## JavaScript
+### Pieces I need
+ - [X] specify canvas size
+ - [X] draw bird image
+ - [X] top pipe image
+ - [X] constant gap between pipes
+ - [X] bottom pipe image
+ - [X] score tracker
+ - [X] ready screen: game state 0
+ - [X] game over screen: game state 2
+ - [X] background image
+ - [X] ground image
+ - [X] sounds on flying, collision, scoring, falling, and game over screen
+### Functions I need
+ - [X] start game: game state 1
+    - [X] start on 'click' (mobile compatible)
+    - [X] spawn set of pipes with constant gap
+      - [X] if statement triggering at x-coordinate
+ - [X] bird's movement
+    - [X] gravity: bird's y-coordinate increases to fall  
+     * velocity's value is incremented by gravity constant
+     * bird's position function updates velocity's value
+    - [X] flying: bird's y-coordinate decreases to fly on 'click'
+        - [X] eventListener 'click' (also enabled 'spacebar')
+    - [X] rotate bird upward each time it flies (smells like a challenge)
+        - [X] animation object / array of images to flip through
+ - [X] a drawing function to animate game
+   - [X] place images and loop
+    - [X] pipes' x-coordinates decrease to scroll left
+        - [X] increment score by 1 upon passing pipe
+    - [X] pipes' y-coordinates are generated randomly
+    - [X] draw background
+    - [X] draw bird
+ - [X] Game Over: game state 2
+    - [X] collision with pipes
+    - [X] collision with floor and canvas ceiling
+    - [X] cut screen
+    - [X] restart game on 'click' start button
+        - [ ] display best score
+        - [X] display current score
+        - [X] reset score on start game
+        - [X] reset pipes
+
+# FINAL THOUGHTS
+> Working with generated images of rectangles `fillRect()` was proving to be more work than actually drawing canvas images from a sprite image source.  This meant working with images from the beginning would just make things simpler in the long run.
+
+> Incrementing gravity to increase velocity was crucial to the feel of the game.  It made the bird falling feel natural and is an important concept to learn.  Flapping, or flying, meant setting the velocity to fly key-value which doesn't translate well when reading code.  
+
+> Infinite pipe spawning has been a road block for me.  Animating canvas images seem even more challenging.
+
+> Tracking the score was challenging due to the fact that each place value of the number had to correlate to an image of its value. No texts and fonts were used in the game.
+
+> Overall, I learned a lot of canvas tools and mechanics for JavaScript.  Re-creating this game was a lot of fun and good training for various JavaScript fundamentals such as loops, functions, if-else statements, arrays, objects, and concepts.
