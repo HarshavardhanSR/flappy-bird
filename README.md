@@ -4,27 +4,20 @@ Flappy bird flew into an endless pipe zone (or is it?) and needs help flying thr
 # ABOUT THE GAME
 A simple side-scrolling game where the player controls a bird to fly between pipes without hitting them.  Flying between each set of pipes scores 1 point and hitting them or the ground ends the game.  See how long you can last and set records.  
 
-Here's a link to the game:
-https://noanonoa.github.io/flappy-bird/
 
-# WIREFRAME  
-![wireframe for game screen](/img/001-wireframe.png "Game Screen")  
-![wireframe for collision mechanics](/img/002-wireframe.png "Collision Mechanics")
+## 🔧 How to Run  
+1. Clone this repository:  
+   ```sh
+   git clone https://github.com/HarshavardhanSR/flappy-bird.git
+2. Open index.html in a browser.
+2. Start playing! 🚀
+
+
+
 
 # TECHNOLOGY
  * HTML/CSS on canvas
  * JavaScript for game logic
-
-# ASSETS
-### IMAGES
-![flappy bird theme](/img/og-theme.png)  
-(src: google images)  
-![flappy bird theme v2](/img/og-theme-2.png)  
-(src: https://www.spriters-resource.com/fullview/59894/)  
-### AUDIO
-(src: https://www.sounds-resource.com/mobile/flappybird/sound/5309/)
-### SCREENSHOT
-![flappy bird screenshot](/img/001-screenshot.png)
 
 # MVP
  * start the game with a 'press button'
@@ -96,11 +89,7 @@ https://noanonoa.github.io/flappy-bird/
         - [X] display current score
         - [X] reset score on start game
         - [X] reset pipes
-
-# FINAL THOUGHTS
-> Working with generated images of rectangles `fillRect()` was proving to be more work than actually drawing canvas images from a sprite image source.  This meant working with images from the beginning would just make things simpler in the long run.
-
-> Incrementing gravity to increase velocity was crucial to the feel of the game.  It made the bird falling feel natural and is an important concept to learn.  Flapping, or flying, meant setting the velocity to fly key-value which doesn't translate well when reading code.  
+ 
 
 > Infinite pipe spawning has been a road block for me.  Animating canvas images seem even more challenging.
 
